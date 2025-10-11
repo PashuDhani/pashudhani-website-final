@@ -1,3 +1,22 @@
+PashuDhani Landing Site (Final)
+
+This is a lightweight React + Vite + TailwindCSS landing page for the PashuDhani super app.
+
+Scripts
+- Dev: npm run dev
+- Build: npm run build
+- Preview: npm run preview
+
+Sections
+- Navbar
+- Hero
+- Features
+- How it works
+- Testimonials
+- CTA
+- Footer
+
+Update copy and links as needed (e.g. app store links, partner onboarding).
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
