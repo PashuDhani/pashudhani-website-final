@@ -1,12 +1,8 @@
 import React from 'react'
-import Navbar from '../components/Navbar'
-import Footer from '../components/Footer'
 
 const PrivacyPolicy: React.FC = () => {
   return (
-    <div className="min-h-screen bg-white">
-      <Navbar />
-      <main className="mx-auto max-w-3xl px-4 py-12 text-gray-800">
+    <main className="mx-auto max-w-3xl px-4 py-12 text-gray-800">
         <h1 className="text-3xl font-bold mb-6">Privacy Policy</h1>
         <p className="mb-8 text-sm text-gray-500">Last updated: {new Date().toLocaleDateString()}</p>
 
@@ -173,9 +169,7 @@ const PrivacyPolicy: React.FC = () => {
             <span className="ml-1 font-medium">support@pashudhani.com</span>.
           </p>
         </section>
-      </main>
-      <Footer />
-    </div>
+    </main>
   )
 }
 

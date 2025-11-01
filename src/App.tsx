@@ -12,33 +12,33 @@ import Download from './components/Download'
 import FAQ from './components/FAQ'
 import Contact from './components/Contact'
 import PrivacyPolicy from './pages/PrivacyPolicy'
+import { Routes, Route } from 'react-router-dom'
+
+const Home: React.FC = () => (
+  <>
+    <main>
+      <Hero />
+      <Features />
+      <Stats />
+      <Partners />
+      <HowItWorks />
+      <Testimonials />
+      <CTA />
+      <Download />
+      <FAQ />
+      <Contact />
+    </main>
+  </>
+)
 
 const App: React.FC = () => {
-  // Very light client-side routing: render dedicated page for /privacy
-  const path = typeof window !== 'undefined' ? window.location.pathname : '/'
-  if (path === '/privacy') {
-    return (
-      <div className="min-h-screen">
-        <PrivacyPolicy />
-      </div>
-    )
-  }
-
   return (
     <div className="min-h-screen">
       <Navbar />
-      <main>
-        <Hero />
-        <Features />
-        <Stats />
-        <Partners />
-        <HowItWorks />
-        <Testimonials />
-        <CTA />
-        <Download />
-        <FAQ />
-        <Contact />
-      </main>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/privacy" element={<PrivacyPolicy />} />
+      </Routes>
       <Footer />
     </div>
   )

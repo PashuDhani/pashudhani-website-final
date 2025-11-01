@@ -1,5 +1,6 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
+import { Link } from 'react-router-dom'
 
 const Navbar: React.FC = () => {
   const { t, i18n } = useTranslation()
@@ -16,7 +17,7 @@ const Navbar: React.FC = () => {
         <a href="#how" className="hover:text-gray-900">{t('navbar.how')}</a>
         <a href="#faq" className="hover:text-gray-900">{t('navbar.faq')}</a>
         <a href="#contact" className="hover:text-gray-900">{t('navbar.contact')}</a>
-        <a href="/privacy" className="hover:text-gray-900">Privacy</a>
+        <Link to="/privacy" className="hover:text-gray-900">Privacy</Link>
       </nav>
       <div className="flex items-center gap-2">
         <button onClick={toggleLang} className="inline-flex rounded-md border border-gray-300 px-3 py-2 text-sm hover:bg-gray-50">{i18n.language === 'en' ? 'हिंदी' : 'EN'}</button>

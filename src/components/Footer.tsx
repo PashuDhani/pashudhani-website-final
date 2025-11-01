@@ -1,5 +1,6 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
+import { Link } from 'react-router-dom'
 
 const Footer: React.FC = () => {
   const { t } = useTranslation()
@@ -9,7 +10,7 @@ const Footer: React.FC = () => {
       <div className="flex flex-wrap items-center justify-between gap-4">
         <p>© {new Date().getFullYear()} PashuDhani. All rights reserved.</p>
         <div className="flex items-center gap-4">
-          <a href="/privacy" className="hover:text-gray-900">{t('footer.privacy')}</a>
+          <Link to="/privacy" className="hover:text-gray-900">{t('footer.privacy')}</Link>
           <a href="#" className="hover:text-gray-900">{t('footer.terms')}</a>
           <a href="#" className="hover:text-gray-900">{t('footer.contact')}</a>
         </div>
