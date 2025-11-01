@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "predeploy": "npm run build && echo 'www.pashudhani.com' > dist/CNAME && echo '/* /index.html 200' > dist/_redirects",
+    "predeploy": "npm run build && echo 'www.pashudhani.com' > dist/CNAME && cp _redirects dist/",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
