@@ -16,6 +16,7 @@ const Navbar: React.FC = () => {
         <a href="#how" className="hover:text-gray-900">{t('navbar.how')}</a>
         <a href="#faq" className="hover:text-gray-900">{t('navbar.faq')}</a>
         <a href="#contact" className="hover:text-gray-900">{t('navbar.contact')}</a>
+        <a href="/privacy" className="hover:text-gray-900">Privacy</a>
       </nav>
       <div className="flex items-center gap-2">
         <button onClick={toggleLang} className="inline-flex rounded-md border border-gray-300 px-3 py-2 text-sm hover:bg-gray-50">{i18n.language === 'en' ? 'हिंदी' : 'EN'}</button>

@@ -11,8 +11,19 @@ import Partners from './components/Partners'
 import Download from './components/Download'
 import FAQ from './components/FAQ'
 import Contact from './components/Contact'
+import PrivacyPolicy from './pages/PrivacyPolicy'
 
 const App: React.FC = () => {
+  // Very light client-side routing: render dedicated page for /privacy
+  const path = typeof window !== 'undefined' ? window.location.pathname : '/'
+  if (path === '/privacy') {
+    return (
+      <div className="min-h-screen">
+        <PrivacyPolicy />
+      </div>
+    )
+  }
+
   return (
     <div className="min-h-screen">
       <Navbar />
