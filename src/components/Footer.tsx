@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
         <div className="flex items-center gap-4">
           <Link to="/privacy" className="hover:text-gray-900">{t('footer.privacy')}</Link>
           <a href="#" className="hover:text-gray-900">{t('footer.terms')}</a>
-          <a href="#" className="hover:text-gray-900">{t('footer.contact')}</a>
+          <Link to="/#contact" className="hover:text-gray-900">{t('footer.contact')}</Link>
         </div>
       </div>
     </div>

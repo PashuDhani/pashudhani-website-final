@@ -13,6 +13,7 @@ import FAQ from './components/FAQ'
 import Contact from './components/Contact'
 import PrivacyPolicy from './pages/PrivacyPolicy'
 import { Routes, Route } from 'react-router-dom'
+import ScrollToHash from './components/ScrollToHash'
 
 const Home: React.FC = () => (
   <>
@@ -35,6 +36,7 @@ const App: React.FC = () => {
   return (
     <div className="min-h-screen">
       <Navbar />
+      <ScrollToHash />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />
