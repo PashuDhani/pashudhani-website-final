@@ -1,34 +1,54 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
 
 const Navbar: React.FC = () => {
   const { t, i18n } = useTranslation()
+  const [isOpen, setIsOpen] = useState(false)
   const toggleLang = () => i18n.changeLanguage(i18n.language === 'en' ? 'hi' : 'en')
+
   return (
-  <header className="sticky top-0 z-20 bg-white/80 backdrop-blur supports-[backdrop-filter]:bg-white/60 border-b border-gray-200">
-    <div className="mx-auto max-w-7xl px-4 py-3 flex items-center justify-between">
-      <div className="flex items-center gap-2">
-        <Link to="/" className="flex items-center gap-2">
-          <span className="inline-flex h-8 w-8 items-center justify-center rounded-md bg-green-600 text-white font-bold">PD</span>
-          <span className="text-lg font-semibold">{t('brand')}</span>
+    <header className="sticky top-0 z-20 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/90 border-b border-primary/10 shadow-sm">
+      <div className="mx-auto max-w-7xl px-4 py-4 flex items-center justify-between">
+        <Link to="/" className="flex items-center gap-2 group">
+          <span className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-primary to-secondary text-white font-bold text-lg shadow-md group-hover:shadow-lg transition-shadow">
+            🌾
+          </span>
+          <span className="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">{t('brand')}</span>
         </Link>
+
+        <nav className="hidden md:flex items-center gap-8 text-sm">
+          <Link to="/#features" className="text-gray-700 hover:text-primary font-medium transition-colors">{t('navbar.features')}</Link>
+          <Link to="/#how" className="text-gray-700 hover:text-primary font-medium transition-colors">{t('navbar.how')}</Link>
+          <Link to="/#faq" className="text-gray-700 hover:text-primary font-medium transition-colors">{t('navbar.faq')}</Link>
+          <Link to="/#contact" className="text-gray-700 hover:text-primary font-medium transition-colors">{t('navbar.contact')}</Link>
+          <Link to="/privacy" className="text-gray-700 hover:text-primary font-medium transition-colors">Privacy</Link>
+        </nav>
+
+        <div className="flex items-center gap-3">
+          <button
+            onClick={toggleLang}
+            className="hidden sm:inline-flex rounded-lg border border-gray-300 px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors"
+          >
+            {i18n.language === 'en' ? 'हिंदी' : 'EN'}
+          </button>
+          <Link
+            to="/#cta"
+            className="hidden sm:inline-flex rounded-lg border border-primary/30 px-4 py-2 text-sm font-medium text-primary hover:bg-primary/5 transition-colors"
+          >
+            {t('navbar.partner')}
+          </Link>
+          <Link
+            to="/#cta"
+            className="inline-flex rounded-lg bg-gradient-to-r from-primary to-secondary px-4 py-2 text-sm font-semibold text-white shadow-md hover:shadow-lg hover:scale-105 transition-all"
+          >
+            {t('navbar.getApp')}
+          </Link>
+        </div>
       </div>
-      <nav className="hidden md:flex items-center gap-6 text-sm text-gray-600">
-        <Link to="/#features" className="hover:text-gray-900">{t('navbar.features')}</Link>
-        <Link to="/#how" className="hover:text-gray-900">{t('navbar.how')}</Link>
-        <Link to="/#faq" className="hover:text-gray-900">{t('navbar.faq')}</Link>
-        <Link to="/#contact" className="hover:text-gray-900">{t('navbar.contact')}</Link>
-        <Link to="/privacy" className="hover:text-gray-900">Privacy</Link>
-      </nav>
-      <div className="flex items-center gap-2">
-        <button onClick={toggleLang} className="inline-flex rounded-md border border-gray-300 px-3 py-2 text-sm hover:bg-gray-50">{i18n.language === 'en' ? 'हिंदी' : 'EN'}</button>
-        <Link to="/#cta" className="hidden sm:inline-flex rounded-md border border-gray-300 px-3 py-2 text-sm hover:bg-gray-50">{t('navbar.partner')}</Link>
-        <Link to="/#cta" className="inline-flex rounded-md bg-primary px-3 py-2 text-sm font-medium text-white hover:bg-blue-600">{t('navbar.getApp')}</Link>
-      </div>
-    </div>
-  </header>
-)}
+    </header>
+  )
+}
 
 export default Navbar
 
