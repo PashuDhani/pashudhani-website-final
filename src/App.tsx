@@ -12,6 +12,7 @@ import Download from './components/Download'
 import FAQ from './components/FAQ'
 import Contact from './components/Contact'
 import PrivacyPolicy from './pages/PrivacyPolicy'
+import AccountDeletion from './pages/AccountDeletion'
 import { Routes, Route } from 'react-router-dom'
 import ScrollToHash from './components/ScrollToHash'
 
@@ -40,6 +41,7 @@ const App: React.FC = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />
+        <Route path="/account-deletion" element={<AccountDeletion />} />
       </Routes>
       <Footer />
     </div>
